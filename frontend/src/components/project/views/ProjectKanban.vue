@@ -354,6 +354,11 @@ const DRAG_OPTIONS = {
 	dragClass: 'task-dragging',
 	delayOnTouchOnly: true,
 	delay: 1000,
+	// Chrome's native drag autoscroll only reacts within a few pixels of the board edge,
+	// so let sortable scroll the board itself once a dragged card gets close to the edge.
+	forceAutoScrollFallback: true,
+	scrollSensitivity: 100,
+	scrollSpeed: 20,
 } as const
 
 const MIN_SCROLL_HEIGHT_PERCENT = 0.25
